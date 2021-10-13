@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        AsyncImage(url: URL(string: "https://foodish-api.herokuapp.com/images/samosa/samosa20.jpg"))
+
     }
 }
 
