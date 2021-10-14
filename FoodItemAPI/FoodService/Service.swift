@@ -17,7 +17,7 @@ final class FoodServiceImplementation: FoodService {
         
         let urlSession = URLSession.shared
         
-        let url = URL(string: APIConstants.baseURL.appending("/images"))
+        let url = URL(string: APIConstants.baseURL.appending("/api/"))
         
         let (data, _) = try await urlSession.data(from: url!)
         
