@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
-
 struct ContentView: View {
+    
+    let foods: Food
+    
     var body: some View {
-        AsyncImage(url: URL(string: "https://foodish-api.herokuapp.com/images/samosa/samosa20.jpg"))
+        AsyncImage(url: URL(string: foods.image)!)
 
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(foods: Food.dummyData)
     }
 }

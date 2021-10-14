@@ -8,5 +8,5 @@
 import SwiftUI
 
 enum APIConstants {
-    static let baseUrl = "https://foodish-api.herokuapp.com/api/"
+    static let baseURL = "https://foodish-api.herokuapp.com"
 }
