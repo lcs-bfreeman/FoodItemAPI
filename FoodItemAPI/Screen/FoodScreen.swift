@@ -9,23 +9,27 @@ import SwiftUI
 
 struct FoodScreen: View {
     
-    @StateObject private var vm = ViewModelImplementation(
+    @StateObject private var foodVM = ViewModelImplementation(
         service: FoodServiceImplementation()
     )
 
     var body: some View {
         VStack(alignment: .center) {
-            if vm.food.isEmpty {
+            if foodVM.food.isEmpty {
                 ProgressView()
             } else {
 
-                ContentView(foods: vm.food.last!)
+                ContentView(foods: foodVM.food.last!)
+                    .scaledToFit()
+                    .padding()
             }
+                
         }
+        .scaledToFit()
         .padding()
         .task {
 
-            await vm.getFood()
+            await foodVM.getFood()
         }
     }
     

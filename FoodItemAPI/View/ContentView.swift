@@ -11,9 +11,13 @@ struct ContentView: View {
     let foods: Food
     
     var body: some View {
+        
         AsyncImage(url: URL(string: foods.image)!)
+            .scaledToFit()
+            .padding()
 
     }
+        
 }
 
 struct ContentView_Previews: PreviewProvider {
