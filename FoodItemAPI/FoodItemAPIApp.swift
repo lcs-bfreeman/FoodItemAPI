@@ -12,10 +12,7 @@ struct FoodItemAPIApp: App {
     var body: some Scene {
         WindowGroup {
             FoodScreen()
-                .scaledToFit()
-                .padding()
-                .background(Color.yellow)
-                .navigationBarTitle("Daily Special")
+            }
         }
     }
-}
+
