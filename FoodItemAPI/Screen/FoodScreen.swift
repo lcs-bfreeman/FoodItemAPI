@@ -12,12 +12,15 @@ struct FoodScreen: View {
     @StateObject private var foodVM = ViewModelImplementation(
         service: FoodServiceImplementation()
     )
-var fod = false
+    
+    @ObservedObject var viewModel: TextViewModel
+    
+    @State var flavourText: String
+    
     var body: some View {
         
         NavigationView{
-            ZStack(alignment: .center){
-                
+            VStack(alignment: .center){
         VStack (alignment: .center) {
             if foodVM.food.isEmpty {
                 ProgressView()
@@ -27,21 +30,24 @@ var fod = false
                     .scaledToFit()
                     .padding()
             }
-                
+            
+
         }
         .padding()
         .task {
 
             await foodVM.getFood()
         }
+                
         }
         }
-       
+        Text("\(flavourText)")
+
     }
 }
 
-struct FoodScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        FoodScreen()
-    }
-}
+//struct FoodScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FoodScreen(viewModel: viewModel, flavourText: flavourText)
+//    }
+//}

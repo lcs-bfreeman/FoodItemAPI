@@ -7,16 +7,24 @@
 
 import Foundation
 
-// Define a view model that uses the service to retrieve data from the endpoint
 protocol ViewModel: ObservableObject {
 
-    // This function will return details of the current XKCD comic
     func getFood() async
+    
+
     
 }
 
+
+
+
+
 @MainActor
 final class ViewModelImplementation: ViewModel, ObservableObject {
+
+    
+    
+    
     
     @Published private(set) var food: [Food] = []
     
@@ -37,4 +45,7 @@ final class ViewModelImplementation: ViewModel, ObservableObject {
         }
     }
     
+    
 }
+
+

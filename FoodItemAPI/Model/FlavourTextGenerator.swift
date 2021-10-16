@@ -8,15 +8,25 @@
 import Foundation
 
 struct FlavourTextGenerator {
-    static private let flavourTexts: [FlavourText] = [
-    FlavourText(flavour: "Yummy!"),
-    FlavourText(flavour: "Looks Great!"),
-    FlavourText(flavour: "Only $9.99!"),
-    FlavourText(flavour: "Is anyone going to eat that?"),
-    FlavourText(flavour: "Wow!"),
-    FlavourText(flavour: "New!"),
-    FlavourText(flavour: "Buy one get one free!"),
-    FlavourText(flavour: "Sale!"),
+    
+    static private let flavourTexts: [Flavours] = [
+        Flavours(flavour: "Yummy!"),
+        Flavours(flavour: "Looks Great!"),
+        Flavours(flavour: "Only $9.99!"),
+        Flavours(flavour: "Is anyone going to eat that?"),
+        Flavours(flavour: "Wow!"),
+        Flavours(flavour: "New!"),
+        Flavours(flavour: "Buy one get one free!"),
+        Flavours(flavour: "Sale!"),
     ]
+    
+    static func getText() -> FlavourText {
+        let flavour = flavourTexts.randomElement()!
+        let flavourText = FlavourText(flavours: flavour)
+        
+        return flavourText
+    }
 
 }
+
+

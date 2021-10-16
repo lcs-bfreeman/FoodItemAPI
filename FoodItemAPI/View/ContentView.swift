@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         
-        AsyncImage(url: URL(string: foods.image)!, scale: 2.0)
+        AsyncImage(url: URL(string: foods.image)!, scale: 6.0)
             .frame(width: 1.0, height: 1.0)
             .scaledToFit()
 

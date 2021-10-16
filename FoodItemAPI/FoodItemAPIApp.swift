@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FoodItemAPIApp: App {
+    
+    @StateObject private var viewModel = TextViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            FoodScreen()
+            FoodScreen(viewModel: viewModel, flavourText: viewModel.history.last!.flavours.flavour)
             }
         }
     }
